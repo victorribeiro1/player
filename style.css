@@ -7,8 +7,8 @@
 }
 
 body {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(23.8%, #f7f7f7), color-stop(92%, #fcdddd));
-  background: linear-gradient(0deg, #f7f7f7 23.8%, #fcdddd 92%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(23.8%, #5300cf), color-stop(92%, #68009d));
+  background: linear-gradient(0deg, #5300cf 23.8%, #68009d 92%);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 100vh;
@@ -29,6 +29,15 @@ body {
   margin: 0;
 }
 
+@media only screen and (orientation: portrait) {
+  body {
+    min-width: 500px;
+  }
+    .music-player {
+      width: 90%;
+  }
+} 
+
 h1 {
   color: #fff;
 }
@@ -36,8 +45,8 @@ h1 {
 .music-player {
   background-color: #fff;
   border-radius: 15px;
-  -webkit-box-shadow: 0 20px 20px 0 #fca9a999;
-  box-shadow: 0 20px 20px 0 #fca9a999;
+  -webkit-box-shadow: 0 20px 20px 0 #767dc199;
+  box-shadow: 0 20px 20px 0 #767dc199;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -124,7 +133,7 @@ h1 {
 }
 
 .music-player__music-info {
-  background-color: #ffffff80;
+  background-color: #767dc199;
   border-radius: 15px 15px 0 0;
   position: absolute;
   top: 0;
@@ -134,10 +143,15 @@ h1 {
   opacity: 0;
   -webkit-transform: translateY(0);
           transform: translateY(0);
-  -webkit-transition: opacity .3s ease-in, -webkit-transform .3s ease-in;
-  transition: opacity .3s ease-in, -webkit-transform .3s ease-in;
-  transition: transform .3s ease-in, opacity .3s ease-in;
-  transition: transform .3s ease-in, opacity .3s ease-in, -webkit-transform .3s ease-in;
+  -webkit-transition: opacity .3s ease-in,
+ -webkit-transform .3s ease-in;
+  transition: opacity .3s ease-in,
+ -webkit-transform .3s ease-in;
+  transition: transform .3s ease-in,
+ opacity .3s ease-in;
+  transition: transform .3s ease-in,
+ opacity .3s ease-in,
+ -webkit-transform .3s ease-in;
   z-index: -10;
 }
 
@@ -163,7 +177,7 @@ h1 {
 }
 
 .music-player__progress {
-  background-color: #fe8daa;
+  background-color: #767dc199;
   border-radius: 999px;
   height: 100%;
   width: 0%;

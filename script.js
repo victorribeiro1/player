@@ -9,8 +9,8 @@ const progressBox = document.getElementById('progress-box');
 const progress = document.getElementById('progress');
 
 // SONG TITLES
-const songNames = ['Drain You', 'If I Could Fly', 'Ransom', 'Roxanne', 'colbie caillat']
-const songBands = ['Nirvana', 'One Direction', 'Lil Tecca', 'Arizona Zervas', 'colbie caillat']
+const songNames = ['MY GIRL', 'BROKEN', 'DEAR GOD', 'EVERLONG', 'TE ROUBAR PARA MIM']
+const songBands = ['The Temptations', 'Seether', 'Avenged Sevenfold', 'Foo Fighters', 'Onze20']
 
 // KEEP TRACK OF SONG
 let songIndex = songBands.length - 1
@@ -22,7 +22,7 @@ loadSong(songNames[songIndex], songBands[songIndex])
 function loadSong(name, band) {
     console.log(name, band)
     title.innerText = `${name} - ${band}`
-    audio.src = `musicas/${band}.mp3`
+    audio.src = `musicas/${name}.wav`
     cover.src = `imagens/${band}.jpg`
 }
 
