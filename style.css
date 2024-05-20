@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(23.8%, #f7f7f7), color-stop(92%, #fcdddd));
+  background: linear-gradient(0deg, #f7f7f7 23.8%, #fcdddd 92%);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "lato", 'segoe UI';
+  margin: 0;
+}
+
+h1 {
+  color: #fff;
+}
+
+.music-player {
+  background-color: #fff;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 20px 20px 0 #fca9a999;
+  box-shadow: 0 20px 20px 0 #fca9a999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 30px;
+  position: relative;
+  margin: 100px 0;
+  z-index: 10;
+}
+
+.music-player__img-box {
+  position: relative;
+  top: -0px;
+  height: 100%;
+  width: 110px;
+  z-index: 10;
+}
+
+.music-player__img-box::before {
+  content: "";
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 20px;
+  width: 20px;
+  z-index: 2;
+}
+
+.music-player__img {
+  -webkit-animation: rotate 10s linear infinite;
+          animation: rotate 10s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 110px;
+  width: inherit;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.music-player.play .music-player__img {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.music-player__navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+}
+
+.music-player__action-btn {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 20px;
+  color: #dfdbdf;
+  font-size: 20px;
+  outline: none;
+}
+
+.music-player__action-btn--big {
+  color: #cdc2d0;
+  font-size: 30px;
+}
+
+.music-player__music-info {
+  background-color: #ffffff80;
+  border-radius: 15px 15px 0 0;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: calc(100% - 40px);
+  padding: 10px 10px 10px 150px;
+  opacity: 0;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: opacity .3s ease-in, -webkit-transform .3s ease-in;
+  transition: opacity .3s ease-in, -webkit-transform .3s ease-in;
+  transition: transform .3s ease-in, opacity .3s ease-in;
+  transition: transform .3s ease-in, opacity .3s ease-in, -webkit-transform .3s ease-in;
+  z-index: -10;
+}
+
+.music-player.play .music-player__music-info {
+  opacity: 1;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.music-player__title {
+  color: black;
+  font-weight: 1000;
+  margin: 0;
+}
+
+.music-player__progress-box {
+  background-color: #fff;
+  border-radius: 999px;
+  cursor: pointer;
+  margin: 10px 0;
+  height: 4px;
+  width: 100%;
+}
+
+.music-player__progress {
+  background-color: #fe8daa;
+  border-radius: 999px;
+  height: 100%;
+  width: 0%;
+  -webkit-transition: width .1s linear;
+  transition: width .1s linear;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=style.css.map */
