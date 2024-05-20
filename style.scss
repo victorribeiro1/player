@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    background: linear-gradient(0deg, #f7f7f7 23.8%, #fcdddd 92%);
+    box-sizing: border-box;
+
+    height: 100vh;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "lato", 'segoe UI';
+
+    margin: 0;
+}
+
+h1 {
+    color: #fff;
+}
+
+.music-player {
+    background-color: #fff;
+    border-radius: 15px;
+    -webkit-box-shadow: 0 20px 20px 0 #fca9a999;
+    box-shadow: 0 20px 20px 0 #fca9a999;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 30px;
+
+    position: relative;
+
+    margin: 100px 0;
+
+    z-index: 10;
+
+    &__img-box {
+        position: relative;
+
+        top: -0px;
+
+        height: 100%;
+        width: 110px;
+
+        z-index: 10;
+
+        &::before {
+            content: "";
+
+            background-color: #fff;
+            border-radius: 50%;
+
+            position: absolute;
+            // top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            height: 20px;
+            width:  20px;
+
+            z-index: 2;
+        }
+    }
+
+    &__img {
+        animation: rotate 10s linear infinite;
+        animation-play-state: paused;
+
+        border-radius: 50%;
+
+        object-fit: cover;
+
+        height: 110px;
+        width: inherit;
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    &.play &__img {
+        animation-play-state: running;
+    }
+
+    &__navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        z-index: 1;
+    }
+
+    &__action-btn {
+        background-color: transparent;
+        border: 0;
+
+        cursor: pointer;
+
+        padding: 10px;
+        margin: 0 20px;
+
+        color: #dfdbdf;
+        font-size: 20px;
+
+        outline: none;
+
+        &--big {
+            color: #cdc2d0;
+            font-size: 30px;
+        }
+    }
+
+    &__music-info {
+        background-color: #ffffff80;
+        border-radius: 15px 15px 0 0;
+
+        position: absolute;
+        top: 0;
+        left: 20px;
+
+        width: calc(100% - 40px);
+        padding: 10px 10px 10px 150px;
+
+        opacity: 0;
+
+        transform: translateY(0);
+        transition: transform .3s ease-in,
+                    opacity .3s ease-in;
+                
+        z-index: -10;
+    }
+
+    &.play &__music-info {
+        opacity: 1;
+        transform: translateY(-100%);
+    }
+
+    &__title {
+        color: black;
+        font-weight: 1000;
+        margin: 0;
+    }
+
+    &__progress-box {
+        background-color: #fff;
+        border-radius: 999px;
+
+        cursor: pointer;
+
+        margin: 10px 0;
+
+        height: 4px;
+        width: 100%;
+    }
+
+    &__progress {
+        background-color: #fe8daa;
+        border-radius: 999px;
+
+        height: 100%;
+        width: 0%;
+
+        transition: width .1s linear;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
